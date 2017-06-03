@@ -1,0 +1,15 @@
+th , tbody{  text-align: center  }
+
+tr{border: 1px solid #ccc;}
+   
+.table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, 
+.table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th{border:none}
+
+.total{
+	margin-top: 15px;
+	font-size: 17px;
+}
+
+.totalLength{
+	font-weight: 600;
+}

@@ -1,0 +1,25 @@
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th data-ng-repeat="(key, value) in data[0]">{{key}}</th>
+		</tr>
+		<tr>
+			<th data-ng-repeat="(key, value) in data[0]">
+			<input type="text" class="form-control" placeholder="Search" data-ng-model="search[key]" data-ng-keyup="updateValue(search[key],key)"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr data-ng-repeat="value in filterData = (data | filter:myObject) | limitTo:pageSize : (currentPage - 1) * pageSize">
+			<td data-ng-repeat="subValue in value">{{subValue}}</td>
+		</tr>
+	</tbody>
+</table>
+
+<div>
+	<div class="pull-left total">
+		Total records : <span class="totalLength">{{data.length}}</span>
+	</div>
+	<div class="pull-right">
+		<ul uib-pagination  total-items="filterData.length" data-ng-model="currentPage" items-per-page="pageSize" data-ng-change="pageChanged()"></ul>
+	</div>
+</div>
